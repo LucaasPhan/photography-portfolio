@@ -8,9 +8,11 @@ import {
 } from "firebase/firestore"
 import { db } from "@/lib/firebase"
 import { Photo } from "@/types/photo"
+import { unstable_noStore as noStore } from "next/cache"
 
-export const dynamic = "force-dynamic"
 export async function getFeaturedPhotos(): Promise<Photo[]> {
+  noStore()
+
   const q = query(
     collection(db, "photos"),
     where("featured", "==", true),

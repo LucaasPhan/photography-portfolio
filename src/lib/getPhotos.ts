@@ -2,15 +2,17 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import { Photo } from '@/types/photo'
 import { Timestamp } from 'firebase-admin/firestore'
+import { unstable_noStore as noStore } from 'next/cache'
 
-export const dynamic = "force-dynamic"
 export async function getPhotos(): Promise<Photo[]> {
+  noStore() 
+  
   const q = query(
     collection(db, "photos"),
     orderBy("shotDate", "desc")
   )
   const snapshot = await getDocs(q)
-  
+
   return snapshot.docs.map(doc => {
     const data = doc.data()
 

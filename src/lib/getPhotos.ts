@@ -3,13 +3,14 @@ import { db } from '@/lib/firebase'
 import { Photo } from '@/types/photo'
 import { Timestamp } from 'firebase-admin/firestore'
 
+export const dynamic = "force-dynamic"
 export async function getPhotos(): Promise<Photo[]> {
   const q = query(
     collection(db, "photos"),
     orderBy("shotDate", "desc")
   )
   const snapshot = await getDocs(q)
-
+  
   return snapshot.docs.map(doc => {
     const data = doc.data()
 

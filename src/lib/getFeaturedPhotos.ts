@@ -9,6 +9,7 @@ import {
 import { db } from "@/lib/firebase"
 import { Photo } from "@/types/photo"
 
+export const dynamic = "force-dynamic"
 export async function getFeaturedPhotos(): Promise<Photo[]> {
   const q = query(
     collection(db, "photos"),

@@ -42,5 +42,4 @@ prisma/dev.db-journal
 
 # extra
 photo_path.txt
-/credentials
 /photo-cli

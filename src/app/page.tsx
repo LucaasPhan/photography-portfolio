@@ -38,7 +38,7 @@ export default async function Home() {
         </section>
         
         {/* Gallery Grid */}
-        { photos ? (<section className="columns-1 md:columns-2 lg:columns-3 mb-6">
+        <section className="columns-1 md:columns-2 lg:columns-3 mb-6">
           {photos.map((photo) => {
             const aspectRatio = photo.width && photo.height 
               ? photo.height / photo.width 
@@ -64,7 +64,7 @@ export default async function Home() {
               </div>
             )
           })}
-        </section>) : null}
+        </section>
 
         {/* View More Link */}
         <div className="text-center mb-16">

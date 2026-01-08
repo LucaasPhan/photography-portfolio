@@ -22,19 +22,15 @@ export default async function Home() {
         <section className="max-w-4xl mx-auto text-center py-16 border-b border-gray-200 dark:border-gray-800">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">About</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            Welcome to my photography portfolio. I specialize in capturing the beauty of everyday moments,
-            landscapes, and portraits. Each photograph tells a story and preserves a memory that will last forever.
+          Welcome! I’m Lucas Phan. I am a landscape and event photographer dedicated to capturing the world in its best light. From the shifting colors of nature to the raw energy of a live event, I focus on dramatic lighting and clean, natural compositions. Whether you’re here to see the beauty of the outdoors or a memory frozen in time, I’m glad to share my vision with you!
           </p>
         </section>
 
         {/* Hero Section */}
         <section className="text-center mb-16 mt-8">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 pb-3 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
-            Photography Portfolio
+            Portfolio
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Capturing moments, one frame at a time
-          </p>
         </section>
         
         {/* Gallery Grid */}
@@ -57,7 +53,7 @@ export default async function Home() {
                     fill
                     className="object-cover transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    quality={85}
+                    quality={70}
                     loading="lazy"
                   />
                 </div>

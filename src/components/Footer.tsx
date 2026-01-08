@@ -17,14 +17,14 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
               className="mr-1">
-                <FaInstagram className="color"></FaInstagram>
+                <FaInstagram className="color"/>
             </a>
             <a 
               href="https://facebook.com/Lucaasphan"
               title="Instagram"
               target="_blank"
               rel="noopener">
-                <FaFacebook className="color"></FaFacebook>
+                <FaFacebook className="color"/>
             </a>
           </div>
         </div>

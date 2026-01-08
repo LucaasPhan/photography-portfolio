@@ -16,8 +16,4 @@ export const PAGE_INFO: PageSchema[] = [
         page_name: "About",
         href: "/about",
     },
-    {
-        page_name: "Contact",
-        href: "/contact",
-    }
 ]

@@ -13,5 +13,4 @@ export interface Photo {
 
   shotDate?: Date | null
   featured?: boolean
-  hash: string
 }

@@ -1,12 +1,7 @@
 import Link from 'next/link'
 import { FaArrowDown } from 'react-icons/fa'
 import { getFeaturedPhotos } from "@/lib/getFeaturedPhotos"
-import dynamic from 'next/dynamic'
-
-const FeaturedMasonry = dynamic(
-  () => import('./_components/FeaturedMasonry'),
-  { ssr: false }
-)
+import FeaturedMasonry from './_components/FeaturedMasonry'
 
 export default async function Home() {
   const photos = await getFeaturedPhotos()

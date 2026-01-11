@@ -1,7 +1,12 @@
 import Link from 'next/link'
 import { FaArrowDown } from 'react-icons/fa'
 import { getFeaturedPhotos } from "@/lib/getFeaturedPhotos"
-import FeaturedMasonry from './_components/FeaturedMasonry'
+import dynamic from 'next/dynamic'
+
+const FeaturedMasonry = dynamic(
+  () => import('./_components/FeaturedMasonry'),
+  { ssr: false }
+)
 
 export default async function Home() {
   const photos = await getFeaturedPhotos()
@@ -45,7 +50,6 @@ export default async function Home() {
             View Full Gallery
           </Link>
         </div>
-
       </div>
     </>
   )

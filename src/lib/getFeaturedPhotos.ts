@@ -6,6 +6,7 @@ import {
   where,
   limit,
   orderBy,
+  Timestamp,
 } from "firebase/firestore"
 import { db } from "@/lib/firebase"
 import { Photo } from "@/types/photo"
@@ -28,10 +29,13 @@ export async function getFeaturedPhotos(): Promise<Photo[]> {
   
     return {
       id: doc.id,
-      ...data,
+      title: data.title,
+      imageUrl: data.imageUrl,
+      width: data.width,
+      height: data.height,
       shotDate: data.shotDate
-        ? data.shotDate.toDate().toISOString()
-        : null,
-    } as Photo
+      ? (data.shotDate as Timestamp).toDate()
+      : null
+    }
   })
 }

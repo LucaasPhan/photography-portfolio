@@ -6,4 +6,3 @@ export default async function GalleryPage() {
 
   return <Gallery photos={photos} />
 }
-

@@ -154,4 +154,3 @@ export default function PhotoModal({ photo, isOpen, onClose }: PhotoModalProps) 
     </div>
   )
 }
-

@@ -41,7 +41,7 @@ export default function GalleryClient({ photos }: GalleryClientProps) {
             alt={photo.title}
             width={photo.width}
             height={photo.height}
-            quality={70}
+            quality={100}
             className='w-full h-auto object-cover transition-opacity duration-500'
           />
         </div>

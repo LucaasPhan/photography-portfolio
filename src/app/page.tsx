@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { FaArrowDown } from 'react-icons/fa'
 import { getFeaturedPhotos } from "@/lib/getFeaturedPhotos"
+import FeaturedMasonry from './_components/FeaturedMasonry'
 
 export default async function Home() {
   const photos = await getFeaturedPhotos()
@@ -29,38 +29,12 @@ export default async function Home() {
         {/* Hero Section */}
         <section className="text-center mb-16 mt-8">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 pb-3 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
-            Portfolio
+            Featured
           </h1>
         </section>
         
         {/* Gallery Grid */}
-        <section className="columns-1 md:columns-2 lg:columns-3 mb-6">
-          {photos.map((photo) => {
-            const aspectRatio = photo.width && photo.height 
-              ? photo.height / photo.width 
-              : 0.75
-            const height = Math.floor(500 * aspectRatio)
-            
-            return (
-              <div
-                key={photo.id}
-                className="group relative block break-inside-avoid mb-6 overflow-hidden bg-gray-200 dark:bg-gray-800 transition-transform duration-300 w-full text-left"
-              >
-                <div className="relative" style={{ height: `${height}px` }}>
-                  <Image
-                    src={photo.imageUrl}
-                    alt={photo.title}
-                    fill
-                    className="object-cover transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    quality={70}
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            )
-          })}
-        </section>
+        <FeaturedMasonry photos={photos} />
 
         {/* View More Link */}
         <div className="text-center mb-16">
@@ -76,4 +50,3 @@ export default async function Home() {
     </>
   )
 }
-
